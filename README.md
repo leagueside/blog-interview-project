@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To install and run
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Install Ruby (see `.ruby-version`)
+* Install and run Postgres
+* Install Bundler: `gem install bundler`
+* Install gems: `bundle install`
+* Set up database: `bundle exec rails db:setup`
+* Run the server: `bundle exec rails server`
+* Visit http://localhost:3000 (port may vary - see output of `rails server` command)
+* Go wild!
