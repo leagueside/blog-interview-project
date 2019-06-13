@@ -7,8 +7,18 @@
 
 <p>
   <strong>User:</strong>
-  <%= @blog.user %>
+  <%= link_to @blog.user.name, @blog.user %>
 </p>
+
+<p>
+  <strong>Posts:</strong>
+  <ul>
+    <% @blog.posts.each do |post| %>
+      <li><%= link_to post.title, post %></li>
+    <% end %>
+  </ul>
+</p>
+
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
