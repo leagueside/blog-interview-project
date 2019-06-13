@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/', to: redirect('/blogs')
+
   resources :logs
   resources :favorites
   resources :posts
