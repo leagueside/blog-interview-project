@@ -15,6 +15,40 @@
   <%= @post.blog.title %>
 </p>
 
+  <strong>Create Comment</Strong>
+  <%= form_with(model: Comment.new, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div hidden class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, :value => 2%>
+  
+
+  
+    <%= form.label :post_id %>
+    <%= form.text_field :post_id, :value => @post.id%>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+  <strong>Comments:</strong>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.user.name%>
+      <li><%= comment.body %></li>
+    <% end %>
+  </ul>
+</p>
+
 <p>
   <strong>Favorited by:</strong>
   <ul>
