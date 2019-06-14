@@ -15,5 +15,15 @@
   <%= @post.blog.title %>
 </p>
 
+<p>
+  <strong>Favorited by:</strong>
+  <ul>
+    <% @post.favorites.each do |favorite| %>
+      <li><%= favorite.user.name %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add Favorite', new_favorite_path %>
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', @post.blog %>
